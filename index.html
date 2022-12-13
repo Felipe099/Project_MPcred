@@ -1,22 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <form action="javascript: enviar();">
-    Valor: <input type="number" class="js-input-valor" name="valor">
-    Vezes: <input type="number" class="js-input-vezes" name="vezes">
-    <p id="paragrafo">
-      
-    </p>
-    
-    <input type="submit" value="Enviar">
-</form>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
 
-  <script src="main.js"></script>
-</body>
+        <link rel="stylesheet" href="style.css" />
+
+        <title>MP cred</title>
+    </head>
+    <body>
+        <div class="page">
+            <header>
+                <img src="/assets/logo.png" alt="" />
+                <!-- <img src="https://source.unsplash.com/random/300x201" alt=""> -->
+            </header>
+
+            <div class="line"></div>
+            <main>
+                <img class="desktop" src="/assets/boneco_desktop.png" alt="">
+                <img class="mobile" src="/assets/boneco_mobile.png" alt="" />
+
+                <div class="form">
+                    <h1>Simule o valor do seu Empréstimo</h1>
+
+                    <form action="javascript: enviar();">
+                        <div class="wrapper">
+                            <label>Valor:</label>
+                            <input
+                                type="number"
+                                class="js-input-valor"
+                                name="valor"
+                            />
+                        </div>
+
+                        <div class="wrapper">
+                            <label>Quantidade de Parcelas:</label>
+                            <input
+                                type="number"
+                                class="js-input-vezes"
+                                name="vezes"
+                            />
+                        </div>
+
+                        <p id="valueParcela"></p>
+                        <br />
+                        <p id="valueTotal"></p>
+
+                        <button class="btn">Calcular</button>
+
+                        <a
+                            class="social"
+                            href="https://api.whatsapp.com/send?phone=557998037467&text=Oi! Gostaria de fazer um empréstimo!"
+                            class="button"
+                            target="_blank"
+                            ><i class="icon-whatsapp"></i> Entrar em contato</a
+                        >
+                    </form>
+                </div>
+            </main>
+            <!-- <footer></footer> -->
+        </div>
+
+        <script src="main.js"></script>
+    </body>
 </html>
