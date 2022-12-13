@@ -196,6 +196,10 @@ main h1 {
     text-decoration: none;
 }
 
+.icon-whatsapp {
+  color: green;
+}
+
 @media (min-width: 768px) {
     body {
         margin-bottom: 0;
