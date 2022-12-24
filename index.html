@@ -11,13 +11,17 @@
             rel="stylesheet"
         />
 
-        <link rel="stylesheet" href="assets/fonts/style.css">
+        <link rel="stylesheet" href="assets/fonts/style.css" />
 
         <link rel="stylesheet" href="style.css" />
+
+        <script src="./js/main.js" type="module" defer></script>
 
         <title>MP cred</title>
     </head>
     <body>
+        <div class="alert-error">Digite apenas números válidos</div>
+
         <div class="page">
             <header>
                 <img src="assets/logo.png" alt="" />
@@ -26,37 +30,62 @@
 
             <div class="line"></div>
             <main>
-                <img class="desktop" src="assets/boneco_desktop.png" alt="">
+                <img class="desktop" src="assets/boneco_desktop.png" alt="" />
                 <img class="mobile" src="assets/boneco_mobile.png" alt="" />
 
                 <div class="form">
                     <h1>Simule o valor do seu Empréstimo</h1>
 
-                    <form action="javascript: enviar();">
+                    <form>
                         <div class="wrapper">
-                            <label>Valor:</label>
-                            <input
-                                type="number"
-                                class="js-input-valor"
-                                name="valor"
-                            />
+                            <label for="valor">Valor:</label>
+                            <input id="valor" type="number" />
                         </div>
 
                         <div class="wrapper">
-                            <label>Quantidade de Parcelas:</label>
-                            <input
-                                type="number"
-                                class="js-input-vezes"
-                                name="vezes"
-                            />
+                            <label for="parcelas"
+                                >Quantidade de Parcelas:</label
+                            >
+                            <input id="parcelas" type="number" />
                         </div>
 
-                        <p id="valueParcela"></p>
-                        <br />
-                        <p id="valueTotal"></p>
+                        <button class="btn" type="submit">Calcular</button>
 
-                        <button class="btn">Calcular</button>
+                        
+                    </form>
+                </div>
+                <div class="modal-wrapper">
+                    <div class="modal card">
+                        <h2 class="title">
+                            <button class="close">
+                                <svg
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <g clip-path="url(#clip0_123_97)">
+                                        <path
+                                            d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"
+                                            fill="#c30010"
+                                            fill-opacity="0.6"
+                                        />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_123_97">
+                                            <rect
+                                                width="24"
+                                                height="24"
+                                                fill="white"
+                                            />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
 
+                            <span></span>
+                        </h2>
                         <a
                             class="social"
                             href="https://api.whatsapp.com/send?phone=557998037467&text=Oi! Gostaria de fazer um empréstimo!"
@@ -64,12 +93,9 @@
                             target="_blank"
                             ><i class="icon-whatsapp"></i> Entrar em contato</a
                         >
-                    </form>
+                    </div>
                 </div>
             </main>
-            <!-- <footer></footer> -->
         </div>
-
-        <script src="main.js"></script>
     </body>
 </html>
