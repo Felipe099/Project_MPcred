@@ -36,7 +36,7 @@ visa.addEventListener('click', () => {
             AlertError.open();
             return;
         }
-
+        AlertErrorNumberParcel.close();
         AlertError.close();
 
         if (parcelas == 1) {
@@ -178,7 +178,7 @@ masterCard.addEventListener('click', () => {
             AlertError.open();
             return;
         }
-
+        AlertErrorNumberParcel.close();
         AlertError.close();
 
         if (parcelas == 1) {
