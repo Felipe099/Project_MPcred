@@ -58,6 +58,22 @@ main h1 {
     font-family: 'Roboto', sans-serif;
 }
 
+.cards {
+    width: 75%;
+    display: flex;
+    margin: 15px auto;
+}
+
+.cards img {
+    width: 70px;
+    height: 35px;
+}
+
+.active {
+    padding: 2px;
+    outline: 2px solid red;
+}
+
 /*FORMULARIO*/
 
 .form {
@@ -68,13 +84,18 @@ main h1 {
     margin-bottom: 25px;
 }
 
+p {
+    margin: 15px 0;
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.wrapper label {
+.wrapper label,
+p {
     font-size: 25px;
 }
 
@@ -95,7 +116,6 @@ main h1 {
 .wrapper + .wrapper {
     margin-top: 25px;
 }
-
 
 /*BOTAO DE CALCULAR E SOCIAL*/
 
@@ -255,14 +275,14 @@ main h1 {
 
 /*Alert Error*/
 
-.alert-error.open {
+.alert-error.open, .alert-error-number-parcel.open {
     opacity: 1;
     visibility: visible;
 
     transform: translateY(0);
 }
 
-.alert-error {
+.alert-error, .alert-error-number-parcel {
     background: #f03e3e;
     padding: 6px;
     font-size: 16px;
@@ -279,6 +299,7 @@ main h1 {
     transform: translateY(-30px);
     transition: transform 0.5s;
 }
+
 
 @media (min-width: 768px) {
     body {
@@ -305,7 +326,7 @@ main h1 {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 50px;
+        margin-top: 25px;
         color: azure;
     }
     main h1 {
@@ -329,6 +350,6 @@ main h1 {
 
     .btn,
     .social {
-    bottom: -25px;
-}
+        bottom: -25px;
+    }
 }

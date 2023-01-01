@@ -7,3 +7,12 @@ export const AlertError = {
       AlertError.alert.classList.remove('open');
   },
 };
+export const AlertErrorNumberParcel = {
+  alert: document.querySelector('.alert-error-number-parcel'),
+  open: () => {
+    AlertErrorNumberParcel.alert.classList.add('open');
+  },
+  close: () => {
+    AlertErrorNumberParcel.alert.classList.remove('open');
+  },
+};
