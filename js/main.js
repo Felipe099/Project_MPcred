@@ -13,6 +13,7 @@ const visa = document.querySelector('.visa');
 const hipercard = document.querySelector('.hipercard');
 const elo = document.querySelector('.elo');
 const masterCard = document.querySelector('.masterCard');
+const banese = document.querySelector('.banese');
 
 inputValor.oninput = () => AlertError.close();
 inputParcelas.oninput = () => AlertError.close();
@@ -22,6 +23,7 @@ visa.addEventListener('click', () => {
     hipercard.classList.remove('active');
     elo.classList.remove('active');
     masterCard.classList.remove('active');
+    banese.classList.remove('active');
     form.onsubmit = (event) => {
         event.preventDefault();
 
@@ -40,15 +42,15 @@ visa.addEventListener('click', () => {
         AlertError.close();
 
         if (parcelas == 1) {
-            juros = 1.07;
-        } else if (parcelas >= 2 && parcelas <= 6) {
-            juros = 1.11;
-        } else if (parcelas >= 7 && parcelas <= 10) {
+            juros = 1.09;
+        } else if (parcelas >= 2 && parcelas <= 5) {
+            juros = 1.12;
+        } else if (parcelas >= 6 && parcelas <= 10) {
             juros = 1.14;
         } else if (parcelas >= 11 && parcelas <= 12) {
             juros = 1.16;
         } else if (parcelas > 13 && parcelas <= 18) {
-            juros = 1.25;
+            juros = 1.24;
         } else {
             AlertError.open();
         }
@@ -67,6 +69,7 @@ hipercard.addEventListener('click', () => {
     visa.classList.remove('active');
     elo.classList.remove('active');
     masterCard.classList.remove('active');
+    banese.classList.remove('active');
     form.onsubmit = (event) => {
         event.preventDefault();
 
@@ -91,13 +94,15 @@ hipercard.addEventListener('click', () => {
         AlertError.close();
 
         if (parcelas == 1) {
-            juros = 1.08;
+            juros = 1.10;
         } else if (parcelas >= 2 && parcelas <= 5) {
-            juros = 1.12;
+            juros = 1.13;
         } else if (parcelas >= 6 && parcelas <= 10) {
-            juros = 1.15;
+            juros = 1.16;
         } else if (parcelas >= 11 && parcelas <= 12) {
-            juros = 1.17;
+            juros = 1.18;
+        } else if (parcelas > 13 && parcelas <= 18) {
+            juros = 1.28;
         } else {
             AlertError.open();
         }
@@ -116,6 +121,7 @@ elo.addEventListener('click', () => {
     visa.classList.remove('active');
     hipercard.classList.remove('active');
     masterCard.classList.remove('active');
+    banese.classList.remove('active');
     form.onsubmit = (event) => {
         event.preventDefault();
 
@@ -164,6 +170,7 @@ masterCard.addEventListener('click', () => {
     visa.classList.remove('active');
     hipercard.classList.remove('active');
     elo.classList.remove('active');
+    banese.classList.remove('active');
     form.onsubmit = (event) => {
         event.preventDefault();
 
@@ -182,15 +189,62 @@ masterCard.addEventListener('click', () => {
         AlertError.close();
 
         if (parcelas == 1) {
-            juros = 1.07;
-        } else if (parcelas >= 2 && parcelas <= 6) {
-            juros = 1.11;
-        } else if (parcelas >= 7 && parcelas <= 10) {
+            juros = 1.09;
+        } else if (parcelas >= 2 && parcelas <= 5) {
+            juros = 1.12;
+        } else if (parcelas >= 6 && parcelas <= 10) {
             juros = 1.14;
         } else if (parcelas >= 11 && parcelas <= 12) {
             juros = 1.16;
         } else if (parcelas > 13 && parcelas <= 18) {
-            juros = 1.25;
+            juros = 1.24;
+        } else {
+            AlertError.open();
+        }
+
+        const parcelaDoEmprestimo = valorDaParcelaEmprestimo(
+            valor,
+            parcelas,
+            juros
+        );
+        const valorDoEmprestimo = valorTotalDoEmprestimo(valor, juros);
+        displayResultMessage(parcelaDoEmprestimo, valorDoEmprestimo);
+    };
+});
+
+banese.addEventListener('click', () => {
+    banese.classList.toggle('active');
+    masterCard.classList.remove('active');
+    visa.classList.remove('active');
+    hipercard.classList.remove('active');
+    elo.classList.remove('active');
+    form.onsubmit = (event) => {
+        event.preventDefault();
+
+        const valor = inputValor.value;
+        const parcelas = inputParcelas.value;
+        let juros;
+
+        const weightOrheightIsANotNumber =
+            notANumber(valor) || notANumber(parcelas);
+
+        if (weightOrheightIsANotNumber) {
+            AlertError.open();
+            return;
+        }
+        AlertErrorNumberParcel.close();
+        AlertError.close();
+
+        if (parcelas == 1) {
+            juros = 1.10;
+        } else if (parcelas >= 2 && parcelas <= 5) {
+            juros = 1.13;
+        } else if (parcelas >= 6 && parcelas <= 10) {
+            juros = 1.16;
+        } else if (parcelas >= 11 && parcelas <= 12) {
+            juros = 1.18;
+        } else if (parcelas > 13 && parcelas <= 18) {
+            juros = 1.28;
         } else {
             AlertError.open();
         }
